@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desentupidora Ninja | Atendimento 24h Especializado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --vermelho: #fe0000;
+            --preto: #020202;
+            --cinza-escuro: #1a1a1a;
+            --branco: #ffffff;
+            --whatsapp: #25d366;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
+
+        body { background-color: var(--branco); color: var(--preto); line-height: 1.6; }
+
+        /* HEADER */
+        header {
+            background: var(--preto);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--vermelho);
+        }
+
+        .logo-area { color: var(--branco); font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; }
+        .logo-area span { color: var(--vermelho); margin-left: 5px; }
+
+        .nav-links a { color: var(--branco); text-decoration: none; margin-left: 20px; font-weight: bold; transition: 0.3s; }
+        .nav-links a:hover { color: var(--vermelho); }
+
+        /* HERO SECTION */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(2, 2, 2, 0.8), rgba(2, 2, 2, 0.8)), 
+                        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=1470');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--branco);
+            padding-top: 80px;
+        }
+
+        .hero-content h1 { font-size: 3.5rem; text-transform: uppercase; margin-bottom: 20px; line-height: 1.1; }
+        .hero-content p { font-size: 1.4rem; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        
+        .btn-urgencia {
+            background: var(--vermelho);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            transition: 0.4s;
+            border: 2px solid var(--vermelho);
+        }
+        .btn-urgencia:hover { background: transparent; color: var(--vermelho); }
+
+        /* DIFERENCIAIS */
+        .features { padding: 60px 5%; background: var(--preto); color: white; display: flex; flex-wrap: wrap; justify-content: space-around; text-align: center; }
+        .feature-item { flex: 1; min-width: 250px; padding: 20px; }
+        .feature-item i { font-size: 2.5rem; color: var(--vermelho); margin-bottom: 15px; }
+
+        /* SERVIÇOS */
+        .section-title { text-align: center; margin: 60px 0 40px; font-size: 2.5rem; font-weight: 900; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--vermelho); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 0 5% 60px; }
+        .card { background: #fff; border: 1px solid #ddd; padding: 40px 25px; text-align: center; transition: 0.3s; border-radius: 8px; }
+        .card:hover { border-color: var(--vermelho); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card i { font-size: 3rem; color: var(--vermelho); margin-bottom: 20px; }
+        .card h3 { margin-bottom: 15px; text-transform: uppercase; }
+
+        /* SOBRE NÓS */
+        .about { background: #f9f9f9; padding: 80px 5%; display: flex; align-items: center; flex-wrap: wrap; gap: 40px; }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .about-img { flex: 1; min-width: 300px; border-left: 8px solid var(--vermelho); padding-left: 20px; }
+        .about-img img { width: 100%; border-radius: 5px; }
+
+        /* AREAS DE ATENDIMENTO */
+        .areas { background: var(--preto); color: white; padding: 80px 5%; text-align: center; }
+        .areas-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
+        .area-box { background: var(--cinza-escuro); padding: 30px; border-radius: 10px; flex: 1; min-width: 280px; }
+        .area-box i { font-size: 2rem; color: var(--vermelho); margin-bottom: 15px; }
+
+        /* FOOTER */
+        footer { background: var(--preto); color: white; padding: 60px 5% 20px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-content h4 { color: var(--vermelho); margin-bottom: 20px; }
+        .footer-content p, .footer-content a { color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; }
+        
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <i class="fas fa-user-ninja"></i> DESENTUPIDORA<span>NINJA</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>SOLUÇÕES NINJA PARA<br><span style="color: var(--vermelho);">PROBLEMAS HIDRÁULICOS</span></h1>
+            <p>Atendimento emergencial 24 horas para residências, comércios e indústrias. Tecnologia de ponta e equipe especializada em São Paulo.</p>
+            <a href="https://wa.me/5511991295540" class="btn-urgencia">FALAR COM ESPECIALISTA AGORA</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-item">
+            <i class="fas fa-clock"></i>
+            <h3>Atendimento 24h</h3>
+            <p>Estamos prontos para te atender a qualquer hora do dia ou da noite.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-check-double"></i>
+            <h3>Garantia Total</h3>
+            <p>Serviços executados com máxima qualidade e garantia por escrito.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-hand-holding-usd"></i>
+            <h3>Preço Justo</h3>
+            <p>Orçamento gratuito e facilitado no cartão ou PIX.</p>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <h2 class="section-title">NOSSOS SERVIÇOS</h2>
+        <div class="services-grid">
+            <div class="card">
+                <i class="fas fa-biohazard"></i>
+                <h3>Dedetização</h3>
+                <p>Controle completo de baratas, formigas, cupins e roedores com produtos certificados.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-faucet"></i>
+                <h3>Desentupimento Geral</h3>
+                <p>Desentupimento de pias, vasos sanitários, ralos e redes de esgoto sem quebrar pisos.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Caça Vazamentos</h3>
+                <p>Equipamentos de Geofone para localizar vazamentos invisíveis com precisão milimétrica.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-tools"></i>
+                <h3>Reparos Hidráulicos</h3>
+                <p>Troca de válvulas, reparos em canos de PVC, ferro e cobre para sanar infiltrações.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-fill-drip"></i>
+                <h3>Limpeza de Caixa d'água</h3>
+                <p>Higienização profunda e desinfecção seguindo as normas da vigilância sanitária.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-wind"></i>
+                <h3>Hidrojateamento</h3>
+                <p>Limpeza pesada de tubulações industriais e galerias com alta pressão de água.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="sobre">
+        <div class="about-text">
+            <h2>Especialistas em <span style="color: var(--vermelho);">Rapidez e Eficiência</span></h2>
+            <p>A <strong>Desentupidora Ninja</strong> nasceu com a missão de oferecer um serviço técnico, limpo e extremamente rápido. Sabemos que problemas de entupimento não podem esperar, por isso mantemos equipes estratégicas em diversos pontos para chegar até você em tempo recorde.</p>
+            <br>
+            <p>Utilizamos equipamentos de última geração, como sondas flexíveis e câmeras de inspeção, garantindo que o problema seja resolvido na raiz, sem causar danos à sua estrutura.</p>
+        </div>
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1621905252507-b354bc2c1df5?auto=format&fit=crop&q=80&w=800" alt="Equipe Ninja em ação">
+        </div>
+    </section>
+
+    <section class="areas">
+        <h2 style="font-size: 2.5rem; margin-bottom: 40px;">ONDE ATUAMOS</h2>
+        <div class="areas-container">
+            <div class="area-box">
+                <i class="fas fa-home"></i>
+                <h4>Residencial</h4>
+                <p>Apartamentos e casas com atendimento discreto e limpo.</p>
+            </div>
+            <div class="area-box">
+                <i class="fas fa-building"></i>
+                <h4>Comercial</h4>
+                <p>Restaurantes, lojas e escritórios. Mantemos seu negócio funcionando.</p>
+            </div>
+            <div class="area-box">
+                <i class="fas fa-industry"></i>
+                <h4>Industrial</h4>
+                <p>Grandes complexos que exigem maquinário pesado e certificados.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <div>
+                <h4>DESENTUPIDORA NINJA</h4>
+                <p>Serviço realizado 24 horas por dia em toda a região. Sua paz de espírito é nossa prioridade.</p>
+            </div>
+            <div>
+                <h4>CONTATO</h4>
+                <p><i class="fab fa-whatsapp"></i> (11) 99129-5540</p>
+                <p><i class="fab fa-instagram"></i> @desentupidora.ninja</p>
+            </div>
+            <div>
+                <h4>LINKS ÚTEIS</h4>
+                <a href="#servicos">Todos os Serviços</a>
+                <a href="#sobre">Nossa História</a>
+                <a href="https://wa.me/5511991295540">Pedir Orçamento</a>
+            </div>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #333; margin-bottom: 20px;">
+        <p style="text-align: center; font-size: 0.8rem;">© 2026 Desentupidora Ninja. Atendimento 24h. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5511991295540" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
